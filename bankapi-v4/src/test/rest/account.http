@@ -1,0 +1,66 @@
+@URL_ACCOUNT=http://localhost:8081/account
+
+
+
+### GET ALL
+GET {{URL_ACCOUNT}}
+
+
+### CRIA
+POST {{URL_ACCOUNT}}
+Content-Type: application/json
+
+{
+    "name": "Teste2",
+    "number": 12346,
+    "balance": 500,
+    "specialLimit": 0
+}
+
+### CRIAR
+POST {{URL_ACCOUNT}}
+Content-Type: application/json
+
+{
+    "name": "ClienteTeste1",
+    "number": 12345,
+    "balance": 1000,
+    "specialLimit": 1000
+}
+
+### CRIA INVAL
+POST {{URL_ACCOUNT}}
+Content-Type: application/json
+
+{}
+
+### GET POR NUMBER
+GET {{URL_ACCOUNT}}/12345
+
+### ATT
+PUT {{URL_ACCOUNT}}/20
+Content-Type: application/json
+
+{
+    "name": "ClienteTeste1",
+    "number": 11111,
+    "balance": 1000,
+    "specialLimit": 1000
+}
+
+### ATUALIZAR NAO ENCONTRADO
+PUT {{URL_ACCOUNT}}/20
+Content-Type: application/json
+
+{
+    "name": "ClienteTeste1",
+    "number": 11111,
+    "balance": 1000,
+    "specialLimit": 1000
+}
+
+### ATUALIZARI NVALIDO
+PUT {{URL_ACCOUNT}}/50
+Content-Type: application/json
+
+{}
